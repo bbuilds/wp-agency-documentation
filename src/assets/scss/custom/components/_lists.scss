@@ -1,0 +1,142 @@
+/** ===========================================================================
+ *
+ * 8. Lists
+ *
+ * 8.1 Index.
+ * 8.2 Divided.
+ * 8.3 No bullet.
+ * 8.4 File tree.
+ * 8.5 Changelog.
+ *
+ * ========================================================================= */
+
+/** ---------------------------------------------------------------------------
+ * 8.1 Index.
+ * ------------------------------------------------------------------------- */
+.bb-index-list {
+    margin-bottom: 6rem;
+
+    &.grid-padding-x > .cell {
+        padding-left: 2rem;
+        padding-right: 2rem;
+
+        @include breakpoint(small only) {
+            padding-left: 0;
+            padding-right: 0;                
+        }
+    }
+
+    &.grid-padding-y > .cell {
+        padding-top: 0;
+        padding-bottom: 4rem;
+    }
+
+    @include breakpoint(small only) {
+        margin-bottom: 4rem;
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 8.2 Divided.
+ * ------------------------------------------------------------------------- */
+.bb-divided {
+    li {
+        margin-right: 2rem;
+
+        &:after {
+            content: '|';
+            display: inline;
+            color: $bb-white-15;
+            vertical-align: middle;
+            padding-left: 2rem;
+
+            @include breakpoint(small only) {
+                display: none;
+            }
+        }
+
+        &:last-child {
+            margin-right: 0;
+
+            @include breakpoint(small only) {
+                border-bottom: none;
+            }
+        }
+
+        &:last-child:after {
+            content: '';
+        }
+
+        @include breakpoint(small only) {
+            margin-right: 0;
+            border-bottom: 1px solid $bb-white-15;            
+
+            a {
+                width: 100%;
+            }
+        }
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 8.3 No bullet.
+ * ------------------------------------------------------------------------- */
+.no-bullet {
+    margin-bottom: 0;
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 8.4 File tree.
+ * ------------------------------------------------------------------------- */
+.bb-file-tree {
+    margin-bottom: 0;
+
+    @extend .bb-small-text;
+
+    li {
+        position: relative;
+        padding: 0;
+
+        &:before {
+            font-size: 1.25rem;
+            width: 1.25rem;
+            text-align: center;
+            display: inline-block;
+            vertical-align: middle;
+            margin-right: 0.25rem;
+
+            @extend .bb-ionicons;
+        }
+
+        &.bb-folder:before {
+            content: '\f139';
+        }
+
+        &.bb-file:before {
+            content: '\f12f';
+        }
+    }
+
+    li ul {
+        margin-left: 1.25rem;
+        margin-bottom: 0;
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 8.5 Changelog.
+ * ------------------------------------------------------------------------- */
+.bb-changelog-list {
+    li {
+        background: transparent url(../img/bullet-icon.svg) left 0.45rem no-repeat;
+        padding-left: 1.25rem;
+    }
+}

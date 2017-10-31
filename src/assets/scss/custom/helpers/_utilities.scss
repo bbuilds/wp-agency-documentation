@@ -1,0 +1,44 @@
+// ============================================================================
+// Custom utilities.
+// ============================================================================
+
+// Ionicons classes.
+.bb-ionicons {
+    font-family: 'Ionicons';
+    font-size: 1rem;
+    font-weight: normal;
+}
+
+// Vertical centering.
+.bb-center-v {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);    
+}
+
+// Vertical & horizontal centering
+.bb-center-both {
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    left: 50%;
+}
+
+// Small text.
+.bb-small-text {
+    font-size: $small-font-size;
+}
+
+.bb-super-small-text {
+    font-size: $super-small-font-size;
+}
+
+// Rounded corners.
+@mixin bb-round($radius: $global-radius) {
+    border-radius: $radius;
+}
+
+// Transitions.
+@mixin bb-transition($property: all, $duration: 200ms, $easing: ease-in-out) {
+    transition: $property $duration $easing;
+}

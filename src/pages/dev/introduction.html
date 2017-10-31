@@ -1,0 +1,100 @@
+---
+layout: article
+page-title: Introduction
+page-domain: dev
+doc-domain: dev-intro
+---
+
+<section>
+    <header class="bb-section-header">
+        <h2>{{ page-title }}</h2>
+    </header>
+
+    <div class="bb-section-content">
+        <p>Welcome to the official developer documentation for your custom WordPress theme. This will be a brief overview of technology used and structure for developing this theme.</p>
+        {{> nav-internal}}        
+    </div> <!-- end .bb-section-content -->
+</section>
+
+<section id="introduction-1" data-magellan-target="introduction-1">
+    <header class="bb-section-header">
+        <h3>Tech Stack</h3>
+    </header>
+
+    <div class="bb-section-content">
+        <p>This theme was built on the Zurb FoundationPress whch consists of SCSS/SASS, HTML/Panani,Gulp, and their CSS grid system + utilities.</p>
+
+        <nav>
+            <a href="https://foundationpress.olefredrik.com/" class="bb-detailed-link">Visit starter-theme webpage.</a>
+        </nav>
+    </div> <!-- end .bb-section-content -->
+</section>
+
+<section id="introduction-2" data-magellan-target="introduction-2">
+    <header class="bb-section-header">
+        <h3>Getting Started</h3>
+    </header>
+
+    <div class="bb-section-content">
+        <h5>Requirements</h5>
+        <p>You will need to have Node.js version 6.x or higher.</p>
+        <p>This project uses SASS, a CSS-pre-procesor. The SASS files are compiled through libsass.</p>
+        <h5>Quickstart</h5>
+        <figure class="ap-code-block">
+            <pre>
+                <code class="language-terminal">
+                    cd /path/to/local/themedir/
+                    git clone https://github.com/projectthemefilename
+                    cd themeName
+                    npm start
+                </code>
+            </pre>
+        </figure>
+
+        
+    </div> <!-- end .bb-section-content -->
+</section>
+
+<section id="introduction-3" data-magellan-target="introduction-3">
+    <header class="bb-section-header">
+        <h3>File Structure</h3>
+    </header>
+
+    <div class="bb-section-content">
+            <div class="bb-well-light-border" id="bb-file-structure">
+                    <ul class="no-bullet bb-file-tree">
+                        <li class="bb-file">header.php</li>
+                        <li class="bb-file">footer.php</li>
+                        <li class="bb-file">404.php</li>
+                        <li class="bb-file">style.css</li>
+                        <li class="bb-folder">src
+                            <ul class="no-bullet">
+                                <li class="bb-folder">assets</li>
+                                <ul class="no-bullet">
+                                        <li class="bb-folder">scss</li>
+                                        <li class="bb-folder">js</li>
+                                        <li class="bb-folder">img</li>
+                                    </ul>
+                            </ul>
+                        </li>
+                        <li class="bb-folder">dist</li>
+                        <li class="bb-folder">template-parts</li>  
+                        <li class="bb-file">package.json</li>    
+                        <li class="bb-file">webpack.config.js</li>     
+                    </ul>
+                </div> <!-- end .ap-well-light-border -->
+                <p>In the /src folder you will the working files for all your assets. Every time you make a change to a file that is watched by Gulp, the output will be saved to the /dist folder.</p>
+    </div> <!-- end .bb-section-content -->
+</section>
+
+<footer>
+    <nav class="bb-page-nav-container">
+        <div class="grid-x">
+            <div class="small-6 cell text-right">
+            </div> <!-- end .cell -->
+            <div class="small-6 cell">
+                <a href="{{root}}dev/page-templates.html" class="bb-page-nav-link bb-next bb-link-arrow">Page Templates</a>
+            </div> <!-- end .cell -->
+        </div> <!-- end .grid-x -->
+    </nav>
+</footer>

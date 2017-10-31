@@ -1,0 +1,44 @@
+/** ===========================================================================
+ *
+ * 6. Footers
+ *
+ * 6.1 Main.
+ * 6.2 Secondary.
+ *
+ * ========================================================================= */
+
+/** ---------------------------------------------------------------------------
+ * 6.1 Main.
+ * ------------------------------------------------------------------------- */
+.bb-footer {
+    background-color: $bb-black-85;
+    border-top: 4px solid $bb-black-85;
+
+    @include breakpoint(medium down) {
+        text-align: center;
+
+        .bb-footer-links,
+        #bb-social-icons {
+            justify-content: center;
+        }
+    }
+
+    @include breakpoint(small only) {
+        .bb-footer-links {
+            flex-direction: column;
+        }            
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 6.2 Secondary.
+ * ------------------------------------------------------------------------- */
+.bb-footer-secondary {
+    background-color: $bb-black-85;
+
+    @include breakpoint(medium down) {
+        padding: 1rem 0;        
+    }
+}

@@ -1,0 +1,23 @@
+<li {{#ifequal doc-domain 'introduction'}} class="is-active" {{/ifequal}}><a href="{{root}}guide/introduction.html">Introduction</a></li>
+<li {{#ifequal doc-domain 'dashboard'}} class="is-active" {{/ifequal}}><a href="{{root}}guide/dashboard.html">Dashboard Overview</a></li>
+<li {{#ifequal doc-domain 'login'}} class="is-active" {{/ifequal}}><a href="{{root}}guide/login.html">Logging Into WordPress</a></li>
+<li {{#ifequal sub-domain 'basics'}} class="is-active" {{/ifequal}}>
+    <a href="#">Basic Management</a>
+    <ul class="vertical menu">
+           <li{{#ifequal doc-domain 'manage-users'}} class="is-active" {{/ifequal}}><a href="{{root}}guide/basics/manage-users.html">Managing Users</a></li> 
+           <li {{#ifequal doc-domain 'manage-pages'}} class="is-active" {{/ifequal}}><a href="{{root}}guide/basics/manage-pages.html">Managing Pages</a></li>
+           <li {{#ifequal doc-domain 'manage-posts'}} class="is-active" {{/ifequal}}><a href="{{root}}guide/basics/manage-posts.html">Managing Posts</a></li>
+           <li {{#ifequal doc-domain 'manage-other'}} class="is-active" {{/ifequal}}><a href="{{root}}guide/basics/manage-other.html">Managing Menus, Sidebars, and Widgets</a></li>
+    </ul>
+</li>
+
+<li {{#ifequal sub-domain 'custom-content'}} class="is-active" {{/ifequal}}>
+    <a href="#">Custom Content</a>
+    <ul class="vertical menu">
+        <li {{#ifequal doc-domain 'custom-fields'}} class="is-active" {{/ifequal}}><a href="{{root}}guide/custom/custom-fields.html">Custom Fields</a></li>
+        <li {{#ifequal doc-domain 'custom-posts'}} class="is-active" {{/ifequal}}><a href="{{root}}guide/custom/custom-post-types.html">Custom Post Types</a></li>
+        <li {{#ifequal doc-domain 'custom-modules'}} class="is-active" {{/ifequal}}><a href="{{root}}guide/custom/custom-modules.html">Custom Modules</a></li>
+    </ul>
+</li>
+<li {{#ifequal doc-domain 'theme-settings'}} class="is-active" {{/ifequal}}><a href="{{root}}guide/theme-settings.html">Theme Settings</a></li>
+<li {{#ifequal doc-domain 'plugins'}} class="is-active" {{/ifequal}}><a href="{{root}}guide/plugins.html">Plugins</a></li>

@@ -1,0 +1,119 @@
+/** ===========================================================================
+ *
+ * 5. Containers
+ *
+ * 5.1 Main.
+ * 5.2 Page and article content.
+ * 5.3 Section content.
+ * 5.4 Wells.
+ *
+ * ========================================================================= */
+
+/** ---------------------------------------------------------------------------
+ * 5.1 Main.
+ * ------------------------------------------------------------------------- */
+.bb-container {
+    width: 100%;
+    padding: 0 4rem;
+
+    @include breakpoint(small only) {
+        padding: 0 2rem;
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 5.2 Page and article content.
+ * ------------------------------------------------------------------------- */
+.bb-page-content,
+.bb-article-content {
+    border: 1px solid $bb-black-12;
+    padding-top: 4rem;
+}
+
+.bb-page-content {
+    border-width: 0 1px 0 0;
+
+    .bb-section-content,
+    .bb-section-header {
+        padding-left: 7.5rem;
+        padding-right: 7.5rem;
+
+        @include breakpoint(medium down) {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }    
+
+        @include breakpoint(small only) {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }    
+    }
+}
+
+.bb-article-content {
+    border-width: 0 1px;
+
+    @include breakpoint(medium down) {
+        .bb-section-content,
+        .bb-section-header {
+            padding-left: 4rem;
+            padding-right: 4rem;
+        }
+    }    
+
+    @include breakpoint(small only) {
+        .bb-section-content,
+        .bb-section-header {
+            padding-left: 2rem;
+            padding-right: 2rem;
+        }
+    }    
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 5.3 Section content.
+ * ------------------------------------------------------------------------- */
+.bb-section-content {
+    padding: 0 5rem 6rem 5rem;
+    
+    figure,
+    #bb-file-structure,
+    table,
+    .callout {
+        margin-bottom: 4rem;
+
+        @include breakpoint(small only) {
+            margin-bottom: 2rem;
+        }
+    }
+
+    @include breakpoint(small only) {
+        padding-bottom: 3rem;        
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 5.4 Wells.
+ * ------------------------------------------------------------------------- */
+.bb-well-light {
+    background-color: $bb-black-05;
+}
+
+.bb-well-light-border {
+    @extend .bb-well-light;
+    @include bb-round();
+
+    padding: 2rem;
+    border: 1px solid $bb-black-05;
+
+    > ul,
+    > ol {
+        margin-bottom: 0;
+    }
+}

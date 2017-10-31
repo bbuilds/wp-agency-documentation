@@ -1,0 +1,16 @@
+<li {{#ifequal page-domain 'start'}} class="is-active" {{/ifequal}}><a href="{{root}}index.html">Start</a></li>
+<li {{#ifequal page-domain 'guide'}} class="is-active" {{/ifequal}}>
+    <a href="{{root}}guide/introduction.html">User Guide</a>
+    <ul class="vertical menu hide-for-large">
+        {{> nav-items-basics}}
+    </ul>
+</li>
+
+<li {{#ifequal page-domain 'dev'}} class="is-active" {{/ifequal}}>
+    <a href="{{root}}dev/introduction.html">Developer</a>
+    <ul class="vertical menu hide-for-large">
+        {{> nav-items-dev}}
+    </ul>
+</li>
+
+<li {{#ifequal page-domain 'changelog'}} class="is-active" {{/ifequal}}><a href="{{root}}changelog.html">Changelog</a></li>

@@ -1,0 +1,120 @@
+// ============================================================================
+// Custom settings.
+// ============================================================================
+
+// Colors.
+$foundation-palette: (
+	primary: #1779ba,
+    secondary: #767676,
+    success: #3adb76,
+    warning: #ffae00,
+    alert: #cc4b37,
+    // Custom colors.
+    bb-black: #0B1521,
+    bb-black-85: rgba(11, 21, 33, 0.85),
+    bb-black-65: rgba(11, 21, 33, 0.65),
+    bb-black-50: rgba(11, 21, 33, 0.50),
+    bb-black-12: rgba(11, 21, 33, 0.12),
+    bb-black-05: rgba(11, 21, 33, 0.05),
+    bb-white: #fff,
+    bb-white-75: rgba(255, 255, 255, 0.75),
+    bb-white-15: rgba(255, 255, 255, 0.15),
+    bb-primary: #D0793F,
+    bb-secondary: #93CDCF,
+    bb-tertiary-1: #4C77A9,
+    bb-tertiary-1-10: rgba(76, 119, 169, 0.10),
+    bb-tertiary-2: #A9794C,
+    bb-tertiary-2-10: rgba(169, 121, 76, 0.10),
+    bb-tertiary-3: #9DBD77,
+    bb-tertiary-4: #E15F6F
+);
+
+$bb-black: get-color('bb-black');
+$bb-black-85: get-color('bb-black-85');
+$bb-black-65: get-color('bb-black-65');
+$bb-black-50: get-color('bb-black-50');
+$bb-black-12: get-color('bb-black-12');
+$bb-black-05: get-color('bb-black-05');
+$bb-white: get-color('bb-white');
+$bb-white-75: get-color('bb-white-75');
+$bb-white-15: get-color('bb-white-15');
+$bb-primary: get-color('bb-primary');
+$bb-secondary: get-color('bb-secondary');
+$bb-tertiary-1: get-color('bb-tertiary-1');
+$bb-tertiary-1-10: get-color('bb-tertiary-1-10');
+$bb-tertiary-2: get-color('bb-tertiary-2');
+$bb-tertiary-2-10: get-color('bb-tertiary-2-10');
+$bb-tertiary-3: get-color('bb-tertiary-3');
+$bb-tertiary-4: get-color('bb-tertiary-4');
+
+// Typography.
+$body-font-family: 'PT Sans', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$header-font-family: 'Muli', 'Helvetica Neue', Helvetica, Roboto, Arial, sans-serif;
+$header-margin-bottom: 1rem;
+$paragraph-lineheight: 1.5;
+$small-font-size: 0.88rem;
+$super-small-font-size: 0.65rem;
+$code-border: none;
+
+$header-styles: (
+    small: (
+    	'h1': ('font-size': 38),
+    	'h2': ('font-size': 38),
+    	'h3': ('font-size': 28),
+    	'h4': ('font-size': 21),
+    	'h5': ('font-size': 16),
+    	'h6': ('font-size': 12),
+    ),
+    medium: (
+    	'h1': ('font-size': 50),
+    	'h2': ('font-size': 38),
+    	'h3': ('font-size': 28),
+    	'h4': ('font-size': 21),
+    	'h5': ('font-size': 16),
+    	'h6': ('font-size': 12),
+    ),
+);
+
+// Other.
+$global-radius: 3px;
+
+// Top bar.
+$topbar-padding: 0;
+$topbar-background: $bb-black-85;
+
+// Menu.
+$menu-simple-margin: 0;
+$menu-item-color-active: $bb-secondary;
+$menu-item-background-active: transparent;
+
+// HR.
+$hr-width: 100%;
+$hr-border: 8px solid $bb-black-05;
+$hr-margin: 6rem auto;
+
+// Off-canvas.
+$offcanvas-background: $bb-white;
+$offcanvas-inner-shadow-size: 0;
+$offcanvas-exit-background: $bb-black-50;
+
+// XY Grid.
+$grid-padding-gutters: (
+    small: 2rem,
+    medium: 2rem
+);
+
+// Drilldown menu.
+$drilldown-arrows: false;
+
+// Accordion menu.
+$accordionmenu-arrows: false;
+$accordionmenu-padding: 1rem 1.25rem;
+$accordionmenu-submenu-padding: 0.5rem 1.25rem;
+
+// Callout.
+$callout-border: none;
+$callout-padding: 1rem 2rem;
+$callout-radius: $global-radius;
+
+// Breakpoints.
+$breakpoint-classes: (small medium large xlarge xxlarge);

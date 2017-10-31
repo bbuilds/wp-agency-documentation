@@ -1,0 +1,83 @@
+---
+layout: article
+page-title: Managing WordPress Users
+page-domain: guide
+doc-domain: manage-users
+sub-domain: basics
+---
+
+<section>
+    <header class="bb-section-header">
+        <h2>{{ page-title }}</h2>
+    </header>
+
+    <div class="bb-section-content">
+        <p>This section will cover creating and managing users within your WordPress theme. Every person who will log into your WordPress should have their own username and password. At least strongly consider who will be sharing a username + password.</p>
+        {{> nav-internal}}        
+    </div> <!-- end .bb-section-content -->
+</section>
+
+<section id="section-1" data-magellan-target="section-1">
+    <header class="bb-section-header">
+        <h3>User Basics</h3>
+    </header>
+
+    <div class="bb-section-content">
+        <p>Upon logging into your WordPress dashboard, you will see a users icon and text on the left side. Click here to manage your users.</p>
+        <header class="bb-section-header">
+                <h5>Add User</h5>
+        </header>
+        <p>After locating users in your dashboard, click the top button that says "Add New" </p>
+         <figure>
+            <img src="{{root}}assets/img/basics/add-new-users-button-ss.jpg" alt="WordPress Add new User Button" />
+        </figure>
+        <p>Next, fill in the information accordingly. After, the new user can reset their password as long as you input an apporiate email.</p>
+        <figure>
+                <img src="{{root}}assets/img/basics/add-new-users-ss.jpg" alt="WordPress Add new User Button" />
+            </figure>
+        <header class="bb-section-header">
+            <h5>Edit User</h5>
+        </header>
+        <p>To edit a user, simply hover over a user then click edit. This screen will allow you to update any information for the user.</p>
+        
+        <header class="bb-section-header">
+                <h5>Remove User</h5>
+        </header>
+        <p>To remove a user, simply hover over a user then click delete. You will be asked again to confirm delation of user./p>
+    </div> <!-- end .bb-section-content -->
+</section>
+
+<section id="section-2" data-magellan-target="section-2">
+    <header class="bb-section-header">
+        <h3>User Roles</h3>
+    </header>
+
+    <div class="bb-section-content">
+      <p>WordPress by default comes with five default basic user roles. You can multiple users for each assigned role, including admins. Each role controls what a user can and cannot do on your website.</p>
+      <ol>
+          <li>Administrator - complete and unrestricted access to the single website.</li>
+          <li>Editor - manage nad publishes posts, including posts of other users.</li>
+          <li>Author - someone who can manage and publish their own posts.</li>
+          <li>Contributor - write and manage their own posts but can not publish them. Admin or editor will need to publish them.</li>
+          <li>Subscriber - somebody who can only manage their profile.</li>
+      </ol>
+       <nav>
+            <a href="https://codex.wordpress.org/Roles_and_Capabilities" class="bb-detailed-link">Roles and Capabilities</a>
+        </nav>
+    </div> <!-- end .bb-section-content -->
+</section>
+
+
+
+<footer>
+    <nav class="bb-page-nav-container">
+        <div class="grid-x">
+            <div class="small-6 cell text-right">
+                    <a href="{{root}}guide/login.html" class="bb-page-nav-link bb-prev bb-link-arrow">Logging Into WordPress</a>
+            </div> <!-- end .cell -->
+            <div class="small-6 cell">
+                <a href="{{root}}guide/basics/manage-pages.html" class="bb-page-nav-link bb-next bb-link-arrow">Managing Pages</a>
+            </div> <!-- end .cell -->
+        </div> <!-- end .grid-x -->
+    </nav>
+</footer>

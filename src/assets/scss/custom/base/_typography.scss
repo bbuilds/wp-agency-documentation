@@ -1,0 +1,538 @@
+/** ===========================================================================
+ *
+ * 1. Typography
+ * 
+ * 1.1 Body.
+ * 1.2 Paragraphs and lists.
+ * 1.3 Links.
+ * 1.4 Headings.
+ * 1.5 Badges.
+ * 1.6 Code.
+ * 1.7 Captions.
+ * 1.8 Other.
+ *
+ * ========================================================================= */
+
+/** ---------------------------------------------------------------------------
+ * 1.1 Body.
+ * ------------------------------------------------------------------------- */
+body {
+    color: $bb-black-65;
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.2 Paragraphs and lists.
+ * ------------------------------------------------------------------------- */
+p {
+    .bb-additional-nav & {
+        margin: 0;
+    }    
+
+    .bb-footer-secondary & {
+        color: $bb-white-75;
+        margin-bottom: 0;
+    }
+
+    .callout.warning & {
+        color: $bb-tertiary-2;
+    }
+
+    .callout.primary & {
+        color: $bb-tertiary-1;
+    }
+}
+
+p,
+ol,
+ul {
+    .bb-section-content & {
+        margin-bottom: 2rem;
+        max-width: 43rem;    
+    }
+}
+
+ol {
+    .bb-section-content & {
+        counter-reset: item;
+        margin-left: 0;
+
+        li {
+            display: block;
+
+            &:before {
+                content: counter(item) ". ";
+                counter-increment: item;
+                font-weight: bold;        
+            }
+        }
+    }    
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.3 Links.
+ * ------------------------------------------------------------------------- */
+a {
+    color: $bb-primary;
+    font-weight: bold;
+    position: relative;
+    
+    @include bb-transition();
+
+    &:hover {
+        color: $bb-black-85;
+    }
+
+    // Link arrow.
+    &.bb-link-arrow {
+        display: inline-block;
+        width: 100%;
+        padding: 1rem 2rem 1rem 0;
+        border-bottom: 1px solid $bb-black-05;
+    
+        &:after {
+            content: '\f10b';
+            right: 0;
+    
+            @extend .bb-center-v;
+            @extend .bb-ionicons;
+        }
+    }    
+    
+    // Menu links.
+    .bb-menu & {
+        color: $bb-black-85;
+        white-space: normal;
+        line-height: 1.25rem;
+        display: inline-block;
+
+        @extend .bb-small-text;
+        
+        &:hover {
+            color: $bb-secondary;
+
+            &:after,
+            &:before {
+                color: inherit;
+            }
+        }
+    }
+
+    .bb-menu li.is-active > & {
+        color: $bb-secondary;
+    }
+
+    // Drilldown menu links.
+    .drilldown li &,
+    .drilldown .is-drilldown-submenu & {
+        width: 100%;
+        padding: 1rem 4rem 1rem 2rem;
+        border-bottom: 1px solid $bb-black-05;            
+    }
+
+    .drilldown .is-drilldown-submenu-parent > &:after,
+    .drilldown .js-drilldown-back > &:before {
+        @extend .bb-super-small-text;
+        @extend .bb-ionicons;
+    }
+
+    .drilldown .is-drilldown-submenu-parent > &:after {
+        content: '\f125';
+        right: 2rem;
+
+        @extend .bb-center-v;
+    }
+
+    .drilldown .js-drilldown-back > &:before {
+        content: '\f124';
+        margin-top: -2px;
+        display: inline-block;
+        vertical-align: middle;
+        margin-right: 0.75rem;
+    }
+
+    // Top bar and footer links.
+    .top-bar ul & {
+        height: 5rem;
+        line-height: 5rem;
+        padding: 0;
+        margin: 0 1.5rem;
+
+        &:after {
+            content: '';
+            display: block;
+            width: 0;
+            height: 4px;
+            bottom: 0;
+            position: absolute;
+            background: $bb-secondary;
+
+            @include bb-transition(width);
+        }
+
+        &:hover:after {
+            width: 100%;
+        }
+
+        &:hover {
+            color: $bb-secondary;
+        }
+    }
+
+    .top-bar li.is-active &:after {
+        width: 100%;
+    }
+
+    .bb-footer-links li & {
+        padding: 2rem 0;
+    }
+
+    .top-bar &,
+    .bb-footer & {
+        color: $bb-white;
+
+        &:hover {
+            color: $bb-secondary;
+        }
+    }
+
+    // Icon button.
+    &.bb-button-icon {
+        height: 4rem;
+        width: 4rem;
+        font-size: 1.5rem;
+    
+        &.bb-small {
+            height: 3rem;
+            width: 3rem;
+        }
+        
+        i {
+            @extend .bb-center-both;
+        }
+    }
+
+    // Accordion links.
+    .accordion-menu .is-accordion-submenu-parent > &:before  {
+        content: '\f123';
+        left: 0;
+
+        @extend .bb-super-small-text;
+        @extend .bb-ionicons;
+        @extend .bb-center-v;
+    }
+
+    .accordion-menu .is-accordion-submenu-parent[aria-expanded='true'] > &:before {
+        content: '\f126';
+    }         
+    
+    .accordion-menu .submenu & {
+        font-weight: normal;
+        color: $bb-black-65;
+
+        &:hover {
+            color: $bb-secondary;
+        }
+    }
+
+    // Detailed link.
+    &.bb-detailed-link {
+        border: 1px solid $bb-black-12;
+        padding: 1rem 4rem 1rem 1rem;
+        color: $bb-black-85;
+        display: inline-block;
+        margin-bottom: 2rem;
+        max-width: 100%;
+        font-weight: normal;
+
+        @extend .bb-small-text;
+        @include bb-round();
+        
+        &:hover {
+            border-color: $bb-black-50;
+        }
+    
+        &:before {
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            content: attr(href);
+            color: $bb-primary;
+            font-weight: bold;
+            display: block;
+        }
+    
+        &:after {
+            content: '\f125';
+            right: 2rem;
+    
+            @extend .bb-super-small-text;
+            @extend .bb-center-v;
+            @extend .bb-ionicons;
+        }
+    }
+
+    // Page nav links.
+    &.bb-page-nav-link {
+        width: auto;
+        padding: 0 1rem 0 0;
+        border-bottom: none;
+        margin-top: 2rem;
+    
+        &:before {
+            position: absolute;
+            top: -2rem;
+    
+            @extend h6;
+        }
+        
+        &.bb-next {
+            &:before {
+                content: 'Next';
+            }
+        }
+    
+        &.bb-prev {
+            padding: 0 0 0 1rem;
+    
+            &:before {
+                content: 'Previous';
+                right: 0;
+            }
+    
+            &:after {
+                content: '\f108';
+                left: 0;
+                right: auto;
+            }
+        }
+
+        @include breakpoint(small only) {
+            font-size: $small-font-size;
+        }
+    }
+
+    // Magellan nav links.
+    .bb-magellan-nav & {
+        color: $bb-black-85;
+        font-weight: normal;
+
+        &.is-active,
+        &:hover {
+            color: $bb-secondary;
+        }
+
+        &.is-active {
+            &:before {
+                content: '\f3d6';
+                font-size: 1rem;
+                display: inline-block;
+                vertical-align: middle;
+                margin-right: 0.5rem;
+
+                @extend .bb-ionicons;
+            }
+        }
+    }
+
+    // Vertical menu.
+    .bb-vertical-menu & {
+        padding: 0.5rem 0;
+        display: block;
+
+        @extend .bb-small-text;
+    }        
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.4 Headings.
+ * ------------------------------------------------------------------------- */
+h1,
+h2,
+h3,
+h4 {
+    font-weight: 900;
+    color: $bb-black-85;
+}
+
+h3 span {
+    font-family: $body-font-family;
+    font-size: 1rem;
+    font-weight: normal;
+    margin-left: 0.25rem;
+
+    @extend .bb-muted;
+
+    @include breakpoint(small only) {
+        margin-left: 0;
+        margin-top: 0.5rem;
+        display: block;        
+    }
+}
+
+h4.bb-hash-heading,
+h5,
+h6 {
+    margin-bottom: 1.75rem;    
+}
+
+h5,
+h6 {
+    font-weight: 700;
+    color: $bb-black-85;
+}
+
+h5 {
+    .bb-section-content & {
+        color: $bb-black-65;        
+    }
+}
+
+h6 {
+    letter-spacing: 1px;
+    color: $bb-black-50;
+    text-transform: uppercase;
+}
+
+.bb-hash-heading,
+.bb-section-header h2,
+.bb-section-header h3,
+.bb-section-header h4,
+.bb-section-header h5, {
+    position: relative;
+
+    &:before {
+        font-size: 1.25rem;
+        color: $bb-black-12;
+        left: -4rem;
+        width: 3rem;
+        display: block;
+        text-align: right;
+
+        @extend .bb-center-v;
+
+        @include breakpoint(medium down) {
+            display: none;
+        }
+    }
+}
+
+.bb-section-header h2:before,
+h2.bb-hash-heading:before {
+    content: '#';
+}
+
+.bb-section-header h3:before,
+h3.bb-hash-heading:before {
+    content: '##';
+}
+
+.bb-section-header h4:before,
+h4.bb-hash-heading:before {
+    content: '###';
+}
+
+.bb-section-header h5:before,
+h5.bb-hash-heading:before {
+    content: '####';
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.5 Badges.
+ * ------------------------------------------------------------------------- */
+.bb-badge {
+    padding: 0.65rem 1rem 0.5rem;
+    display: inline-block;
+    color: $bb-white;
+    line-height: 0.65rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 2rem;
+    
+    @extend .bb-super-small-text;
+    @include bb-round();
+
+    &.bb-code {
+        background-color: $bb-tertiary-1;
+        padding: 0.75rem 0;
+        text-align: center;
+        width: 2.25rem;
+        font-size: 1rem;
+    }
+
+    &.bb-bug-fixes {
+        background-color: $bb-tertiary-4;
+    }
+
+    &.bb-enhancements {
+        background-color: $bb-tertiary-1;
+    }
+
+    &.bb-new {
+        background-color: $bb-tertiary-3;
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.6 Code.
+ * ------------------------------------------------------------------------- */
+code {
+    @extend .bb-small-text;
+    @include bb-round();
+}
+
+.bb-code-block {
+    position: relative;
+
+    pre[class*="language-"] {
+        margin: 0;
+        
+        @include bb-round();
+    }
+
+    &:before {
+        position: absolute;
+        content: "\f271";
+        top: 0;
+        left: -3.25rem;
+
+        @extend .bb-ionicons;
+        @extend .bb-badge;
+        @extend .bb-code;
+
+        @include breakpoint(medium down) {
+            display: none;
+        }
+    }
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.7 Captions.
+ * ------------------------------------------------------------------------- */
+figcaption {
+    font-style: italic;
+    margin-top: 1rem;
+
+    @extend .bb-muted;
+    @extend .bb-small-text;
+}
+
+
+
+/** ---------------------------------------------------------------------------
+ * 1.8 Other.
+ * ------------------------------------------------------------------------- */
+.bb-muted {
+    color: $bb-black-50;
+}
