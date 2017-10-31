@@ -22,7 +22,7 @@ npm start
 ### Production
 
 ```
-npm production
+npm run build
 ```
 
 
